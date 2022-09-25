@@ -1,4 +1,4 @@
-**Assignment 1**
+# Assignment 1
 
 Priority Queue of Processes 
 First, you should get the starter code for the assignment from the GitHub repository csusm-cs/cs433_assign_starter (github.com) (Links to an external site.). The starter code of assignment 1 is under the directory `assign1`. Your program should be based on the starter code. 
