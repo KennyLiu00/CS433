@@ -1,0 +1,3 @@
+https://www.geeksforgeeks.org/input-output-redirection-in-linux/
+https://riptutorial.com/posix/example/26063/connecting-two-child-processes-via-a-pipe
+https://aljensencprogramming.wordpress.com/2014/05/16/implementing-pipes-in-c/
