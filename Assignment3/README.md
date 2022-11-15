@@ -1,8 +1,8 @@
-**Scheduling Algorithms**
+# Scheduling Algorithms
 
 First, you should get the starter code for the assignment from the GitHub repository csusm-cs/cs433_assign_starter (github.com) (Links to an external site.). The starter code of assignment 3 is under the directory "assign3". Your program should be based on the starter code. 
 
-Starter Code
+**Starter Code**
 
 pcb.h: A class representing a single task. Add your names to the file header. No other changes are needed for this file.
 
