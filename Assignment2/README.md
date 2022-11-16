@@ -1,25 +1,48 @@
-# Assignment 2 UNIX shell
+# UNIX Shell and History Feature
 
-This project consists of designing a C program to serve as a shell interface that accepts user commands and then executes each command in a separate process. Your implementation will support input and output redirection, as well as pipes as a form of IPC between a pair of commands. Completing this project will involve using the UNIX fork(), exec(), wait(), dup2(), and pipe() system calls and can be completed on any Linux, UNIX, or macOS system.
+First, download the starter code and Makefile from cs433_assign_starter/assign2 at main · csusm-cs/cs433_assign_starter (github.com)Links to an external site.
 
-I. Overview
- -  A shell interface gives the user a prompt, after which the next command is entered. The example below illustrates the prompt osh> and the user's next command: cat prog.c. (This command displays the file prog.c on the terminal using the UNIX cat command.)
+This assignment is based on programming project 1 "Unix Shell" in chapter 3 of the textbook Links to an external site.. Read textbook instructions for the programming project. 
 
+This project consists of designing a C/C++ program to serve as a shell interface that accepts user commands and then executes each command in a separate process. Completing this project will involve using the UNIX fork(), exec(), wait(), dup2(), and pipe() system calls.
 
-          osh>cat prog.c
- 
+# Starter Code
+**prog.cpp**: Skeleton code for the simple shell. You need to complete this file and remove all TODOs from the comments after you are done.
 
-  - One technique for implementing a shell interface is to have the parent process first read what the user enters on the command line (in this case, cat prog.c) and then create a separate child process that performs the command. Unless otherwise specified, the parent process waits for the child to exit before continuing. This is similar in functionality to the new process creation illustrated in Figure 3.4.3. However, UNIX shells typically also allow the child process to run in the background, or concurrently. To accomplish this, we add an ampersand (&) at the end of the command. Thus, if we rewrite the above command as
+# Required Output
+You should complete the "prog.cpp" file to implement I  - IV parts of the project, namely:
 
+ - Creating the child process and executing the command in the child
+ - Providing a history feature
+ - Adding support for input and output redirection
+# Extra Credits
+You may earn 10-point extra credits by implementing “Part V. Communication via a Pipe” in the program.
 
-          osh>cat prog.c &
- 
+# Attention
+Always check and handle potential errors of system calls in your code, which might lead to creating an infinite number of processes. For example, execvp() may fail if the input command is not valid, in which case the shell should print an error message “command not found”. Not handling the error may result in forking an indefinite number of processes or other undesired problems. 
 
-  - the parent and child processes will run concurrently.
+# Hint
+You can use the "strtok" function (strtok - C++ Reference (cplusplus.com) Links to an external site.) to split the user input into the command name and parameters.
 
-  - The separate child process is created using the fork() system call, and the user's command is executed using one of the system calls in the exec() family (as described in Section Process creation).
+Check OSTEP code p4.c for an example of redirecting output (https://github.com/remzi-arpacidusseau/ostep-code/tree/master/cpu-api)Links to an external site.
 
-  - A C program that provides the general operations of a command-line shell is supplied in the figure below. The main() function presents the prompt osh-> and outlines the steps to be taken after input from the user has been read. The main() function continually loops as long as should_run equals 1; when the user enters exit at the prompt, your program will set should_run to 0 and terminate.
+# Project 1 - UNIX shell (zyBooks)
+This project consists of designing a C program to serve as a shell interface that accepts user commands and then executes each command in a separate process. Your implementation will support input and output redirection, as well as pipes as a form of IPC between a pair of commands. Completing this project will involve using the UNIX **fork(), exec(), wait(), dup2(), and pipe()** system calls and can be completed on any Linux, UNIX, or macOS system.
+
+# I. Overview
+A shell interface gives the user a prompt, after which the next command is entered. The example below illustrates the prompt **osh>** and the user's next command: **cat prog.c**. (This command displays the file **prog.c** on the terminal using the UNIX **cat** command.)
+
+    osh>cat prog.c
+
+One technique for implementing a shell interface is to have the parent process first read what the user enters on the command line (in this case, **cat prog.c**) and then create a separate child process that performs the command. Unless otherwise specified, the parent process waits for the child to exit before continuing. This is similar in functionality to the new process creation illustrated in Figure 3.4.3. However, UNIX shells typically also allow the child process to run in the background, or concurrently. To accomplish this, we add an ampersand (**&**) at the end of the command. Thus, if we rewrite the above command as
+
+   osh>cat prog.c & 
+
+the parent and child processes will run concurrently.
+
+The separate child process is created using the **fork()** system call, and the user's command is executed using one of the system calls in the **exec()** family (as described in Section Process creation).
+
+A C program that provides the general operations of a command-line shell is supplied in the figure below. The **main()** function presents the prompt **osh->** and outlines the steps to be taken after input from the user has been read. The **main()** function continually loops as long as **should_run** equals 1; when the user enters **exit** at the prompt, your program will set **should_run** to 0 and terminate.
 
 
           #include <stdio.h>
@@ -54,62 +77,50 @@ I. Overview
   - Adding support of input and output redirection
   - Allowing the parent and child processes to communicate via a pipe
 
-**II. Executing command in a child process**
+# II. Executing command in a child process
 
-  - The first task is to modify the main() function in the figure above so that a child process is forked and executes the command specified by the user. This will require parsing what the user has entered into separate tokens and storing the tokens in an array of character strings (args in the figure above). For example, if the user enters the command ps -ael at the osh> prompt, the values stored in the args array are:
-
+The first task is to modify the **main()** function in the figure above so that a child process is forked and executes the command specified by the user. This will require parsing what the user has entered into separate tokens and storing the tokens in an array of character strings (**args** in the figure above). For example, if the user enters the command **ps -ael** at the **osh>** prompt, the values stored in the **args** array are:
 
           args[0] = "ps"
           args[1] = "-ael"
           args[2] = NULL
- 
 
-  - This args array will be passed to the execvp() function, which has the following prototype:
-
+This **args** array will be passed to the **execvp()** function, which has the following prototype:
 
           execvp(char *command, char *params[])
- 
 
-  - Here, command represents the command to be performed and params stores the parameters to this command. For this project, the execvp() function should be invoked as execvp(args[0], args). Be sure to check whether the user included & to determine whether or not the parent process is to wait for the child to exit.
+Here, **command** represents the command to be performed and **params** stores the parameters to this command. For this project, the **execvp()** function should be invoked as **execvp(args[0], args)**. Be sure to check whether the user included & to determine whether or not the parent process is to wait for the child to exit.
 
-**III. Creating a history feature**
+# III. Creating a history feature
 
-  - The next task is to modify the shell interface program so that it provides a history feature to allow a user to execute the most recent command by entering !!. For example, if a user enters the command ls −l, she can then execute that command again by entering !! at the prompt. Any command executed in this fashion should be echoed on the user's screen, and the command should also be placed in the history buffer as the next command.
+The next task is to modify the shell interface program so that it provides a ***history*** feature to allow a user to execute the most recent command by entering !!. For example, if a user enters the command **ls −l**, she can then execute that command again by entering !! at the prompt. Any command executed in this fashion should be echoed on the user's screen, and the command should also be placed in the history buffer as the next command.
 
-  - Your program should also manage basic error handling. If there is no recent command in the history, entering !! should result in a message "No commands in history."
+Your program should also manage basic error handling. If there is no recent command in the history, entering !! should result in a message **"No commands in history."**
 
-**IV. Redirecting input and output**
+# IV. Redirecting input and output
 
-  - Your shell should then be modified to support the '>' and '<' redirection operators, where '>' redirects the output of a command to a file and '<' redirects the input to a command from a file. For example, if a user enters
-
+Your shell should then be modified to support the '>' and '<' redirection operators, where '>' redirects the output of a command to a file and '<' redirects the input to a command from a file. For example, if a user enters
 
         osh>ls > out.txt
- 
 
-  - the output from the ls command will be redirected to the file out.txt. Similarly, input can be redirected as well. For example, if the user enters
-
+the output from the **ls** command will be redirected to the file **out.txt**. Similarly, input can be redirected as well. For example, if the user enters
 
         osh>sort < in.txt
- 
 
-  - the file in.txt will serve as input to the sort command.
+the file **in.txt** will serve as input to the **sort** command.
 
-  - Managing the redirection of both input and output will involve using the dup2() function, which duplicates an existing file descriptor to another file descriptor. For example, if fd is a file descriptor to the file out.txt, the call
+Managing the redirection of both input and output will involve using the **dup2()** function, which duplicates an existing file descriptor to another file descriptor. For example, if **fd** is a file descriptor to the file **out.txt**, the call
 
+        dup2(fd, STDOUT_FILENO); 
 
-        dup2(fd, STDOUT_FILENO);
- 
+duplicates **fd** to standard output (the terminal). This means that any writes to standard output will in fact be sent to the **out.txt** file.
 
-  - duplicates fd to standard output (the terminal). This means that any writes to standard output will in fact be sent to the out.txt file.
+You can assume that commands will contain either one input or one output redirection and will not contain both. In other words, you do not have to be concerned with command sequences such as **sort < in.txt > out.txt**.
 
-  - You can assume that commands will contain either one input or one output redirection and will not contain both. In other words, you do not have to be concerned with command sequences such as sort < in.txt > out.txt.
+# V. Communication via a pipe**
 
-**V. Communication via a pipe**
-
-  - The final modification to your shell is to allow the output of one command to serve as input to another using a pipe. For example, the following command sequence
-
+The final modification to your shell is to allow the output of one command to serve as input to another using a pipe. For example, the following command sequence
 
       osh>ls -l | less
  
-
-  - has the output of the command ls −l serve as the input to the less command. Both the ls and less commands will run as separate processes and will communicate using the UNIX pipe() function described in Section Pipes. Perhaps the easiest way to create these separate processes is to have the parent process create the child process (which will execute ls −l). This child will also create another child process (which will execute less) and will establish a pipe between itself and the child process it creates. Implementing pipe functionality will also require using the dup2() function as described in the previous section. Finally, although several commands can be chained together using multiple pipes, you can assume that commands will contain only one pipe character and will not be combined with any redirection operators.
+has the output of the command **ls −l** serve as the input to the **less** command. Both the **ls** and **less** commands will run as separate processes and will communicate using the UNIX **pipe()** function described in Section Pipes. Perhaps the easiest way to create these separate processes is to have the parent process create the child process (which will execute **ls −l**). This child will also create another child process (which will execute **less**) and will establish a pipe between itself and the child process it creates. Implementing pipe functionality will also require using the **dup2()** function as described in the previous section. Finally, although several commands can be chained together using multiple pipes, you can assume that commands will contain only one pipe character and will not be combined with any redirection operators.
