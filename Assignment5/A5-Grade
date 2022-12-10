@@ -1,0 +1,20 @@
+PASSED TESTS
+Runtime < 1s (10.0/10.0) <-- Extra Credit
+Test LRU algorithm on large_refs.txt (20.0/20.0)
+Valgrind memory leak test (5.0/5.0)
+Test LIFO algorithm on large_refs.txt (10.0/10.0)
+Test program on small_refs.txt (10.0/10.0)
+Compile Test (10.0/10.0)
+cppcheck test (5.0/5.0)
+Test FIFO algorithm on large_refs.txt (20.0/20.0)
+
+AUTOGRADER SCORE
+90.0 / 80.0
+
+Sufficient and clear code comments
+8.0 / 8.0 pts
+
+Program report
+12.0 / 12.0 pts
+
+Total Score: 110.0 / 100.0
