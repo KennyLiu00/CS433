@@ -1,0 +1,45 @@
+FAILED TESTS
+Priority RR test (0.0/10.0)
+
+Test Failed: The result of priority RR algorithm is not correct.
+
+../driver_priority_rr.cpp:12:10: fatal error: scheduler_priority_rr.h: No such file or directory
+   12 | #include "scheduler_priority_rr.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+cc1plus: fatal error: ../scheduler_priority_rr.cpp: No such file or directory
+compilation terminated.
+['./test.exe', '../test.txt', '6']
+101.3
+Traceback (most recent call last):
+  File "/autograder/source/tests/priority_rr_test/diff_cout", line 20, in <module>
+    output = subprocess.check_output(args, stderr=subprocess.STDOUT)
+  File "/usr/lib/python3.10/subprocess.py", line 420, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/lib/python3.10/subprocess.py", line 966, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.10/subprocess.py", line 1842, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: './test.exe'
+
+PASSED TESTS
+Priority test (10.0/10.0)
+SJF test (10.0/10.0)
+Compile Test (10.0/10.0)
+RR test (15.0/15.0)
+cppcheck test (10.0/10.0)
+Valgrind test' (10.0/10.0)
+FCFS test (15.0/15.0)
+
+AUTOGRADER SCORE
+80.0 / 80.0
+
+Sufficient and clear code comments
+8.0 / 8.0 pts
+
+Program report
+12.0 / 12.0 pts
+
+Total Grade: 100.0/100.0
