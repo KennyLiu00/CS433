@@ -5,14 +5,14 @@ Compile Test (10.0/10.0)
 Test prog4 with 3 producer (15.0/15.0)
 cppcheck test (10.0/10.0)
 Test prog4 with 5 producer (15.0/15.0)
-
+---------------------------------------------
 AUTOGRADER SCORE
 80.0 / 80.0
-
+---------------------------------------------
 Sufficient and clear code comments
 8.0 / 8.0 pts
-
+---------------------------------------------
 Program report
 12.0 / 12.0 pts
-
+---------------------------------------------
 Total Score: 100.0 / 100.0
