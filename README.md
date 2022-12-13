@@ -45,8 +45,14 @@ After taking this course, students should be able to...
 *CS 311 and CS 231 (CS 331 recommended)*
 
 # LINKS
+https://quizlet.com/539018504/cs-433-zhang-quizzes-flash-cards/ (Quizzes before Midterm)
+
+https://quizlet.com/557135155/cs-433-operating-systems-flash-cards/ (Quizzes after Midterm)
+
 https://quizlet.com/684276630/cs433-midterm-flash-cards/ (Midterm)
 
 https://quizlet.com/lildizzle86/sets (Quizzes)
+
+https://quizlet.com/752491864/zhang-cs433-finalreview-flash-cards/ (Quizzes after Midterm)
 
 https://quizlet.com/462734501/csusm-cs433-final-flash-cards/ (Final)
