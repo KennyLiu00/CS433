@@ -47,4 +47,5 @@ After taking this course, students should be able to...
 # LINKS
 https://quizlet.com/684276630/cs433-midterm-flash-cards/ (Midterm)
 https://quizlet.com/lildizzle86/sets (Quizzes)
+
 https://quizlet.com/462734501/csusm-cs433-final-flash-cards/ (Final)
