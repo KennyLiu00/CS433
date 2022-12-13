@@ -34,6 +34,13 @@ After taking this course, students should be able to...
 
 	• Compare and contrast different approaches to file system design and implementation.
 
+# Assignments Done in Course
+- Assignment 1 - Priority Queue of Processes
+- Assignment 2 - Unix Shell and History Feature
+- Assignment 3 - Scheduling Algorithms
+- Assignment 4 - Producer Consumer Problem
+- Assignment 5 - Analysis of Page Replacement Algorithms
+
 **PREREQUISITES**
 
 *CS 311 and CS 231 (CS 331 recommended)*
