@@ -41,6 +41,10 @@ After taking this course, students should be able to...
 - Assignment 4 - Producer Consumer Problem
 - Assignment 5 - Analysis of Page Replacement Algorithms
 
-**PREREQUISITES**
-
+# **PREREQUISITES**
 *CS 311 and CS 231 (CS 331 recommended)*
+
+# LINKS
+https://quizlet.com/684276630/cs433-midterm-flash-cards/ (Midterm)
+https://quizlet.com/lildizzle86/sets (Quizzes)
+https://quizlet.com/462734501/csusm-cs433-final-flash-cards/ (Final)
