@@ -13,10 +13,113 @@ Test command ls -l (5.0/5.0)
 Test redirection of out > (10.0/10.0)
 Test command date (5.0/5.0)
 ---------------------------------------------
-Sufficient and clear code comments
-8.0 / 8.0 pts
----------------------------------------------
-Program report
-12.0 / 12.0 pts
+Sufficient and clear code comments (8.0/8.0) ==> 8 / 8 pts
++ 2 pts
+Grading comment:
+Each function should have a brief comment explaining the purpose of the function, input parameters to the function, and output. 
+
+applied rubric item
++ 1 pt
+Grading comment:
+Most variables should have a brief comment explaining their purpose. Looping control variables such as: “x” or “i” need not be commented.
+
+applied rubric item
++ 2 pts
+Grading comment:
+Comment your code to explain tricky and important points (not every line).
+
+applied rubric item
++ 2 pts
+Grading comment:
+Comments should be comprehensible and useful. Comments such as: “This adds 1 to Count” are trivial and should be avoided.
+
+applied rubric item
++ 1 pt
+Grading comment:
+Comments should be clearly organized and easily distinguishable from the actual code.
+
+unapplied rubric item
++ 0 pts
+Grading comment:
+No comments added.
+----------------------------------------------------------------------------
+Program report  (12.0/12.0) ==> 12 / 12 pts
+Report organization
+
+applied rubric item
++ 4 pts
+Grading comment:
+4 - Exemplary: Structure is logically clear and conforms to standards if required. Provides smooth transitions in between sections.
+
+unapplied rubric item
++ 3 pts
+Grading comment:
+3 - Satisfactory: Structure is logically clear mostly. Provides adequate transitions in between sections.`
+
+unapplied rubric item
++ 2 pts
+Grading comment:
+2 - Developing: Structure is attempted but not appropriate in a few places Transitions in between sections are weak or inconsistent
+
+unapplied rubric item
++ 1 pt
+Grading comment:
+1- Unsatisfactory: Unstructured or shows little effort in material organization Uses poor or no transitions in-between sections.
+
+unapplied rubric item
++ 0 pts
+Grading comment:
+No submission
+
+Grading comment:
+Report Content
+
+applied rubric item
++ 4 pts
+Grading comment:
+4 - Exemplary: Provides all key technical components and details. Provides ample supporting details (such as figures, tables, analysis, etc.)
+
+unapplied rubric item
++ 3 pts
+Grading comment:
+3 - Satisfactory: Provides all key technical components but a few need more details. Provides adequate supporting details
+
+unapplied rubric item
++ 2 pts
+Grading comment:
+2 - Developing: Missing a few key technical components. Includes some details, but needs more relevant material.
+
+unapplied rubric item
++ 1 pt
+Grading comment:
+1 - Unsatisfactory: Provides no or little technical components (such as design artifacts, decision justification, and data analysis). Includes inconsistent or few details which may interfere with the meaning of the text.
+
+Grading comment:
+Report Writing
+
+applied rubric item
++ 4 pts
+Grading comment:
+4 - Exemplary: Flow smoothly, effective in using strong topic sentences to start paragraphs, transitions to link sentences, a varied sentence structure, and logical connections between ideas. Demonstrates thorough proofreading. Defines all high-tech terms (acronyms or abbreviations); Uses highlighting techniques appropriately to emphasize main points to help information accessibility; clear cross-references.
+
+unapplied rubric item
++ 3 pts
+Grading comment:
+3 - Satisfactory: Effective in sentence structure and very good in logical flow. Appears to have been proofread, but further revision could improve the text. Most main points are highlighted and explained; acronyms are usually defined. 
+
+unapplied rubric item
++ 2 pts
+Grading comment:
+2 - Developing: Uses varied sentence structures but lacks transitions to link sentences and paragraphs in many places. Proofreading appears to have been done hastily. Some main points are highlighted but rarely explained; acronyms are used without definition.
+
+unapplied rubric item
++ 1 pt
+Grading comment:
+1 - Unsatisfactory: Almost no paragraph stays on topic, uses simple sentences and repetitive sentence structure. Does not appear to have proofread (Numerous errors in punctuation, spelling, grammar). Text is unintelligible; Highlighting techniques (tables, figures, headings, different font styles and sizes, etc.) are not used or never explained
+
+unapplied rubric item
++ 0 pts
+Grading comment:
+No Report
 ---------------------------------------------
 Final grade: 110.0 / 100.0 pts
