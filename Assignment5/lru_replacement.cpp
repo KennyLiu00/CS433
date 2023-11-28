@@ -1,7 +1,7 @@
 /**
 * Assignment 5: Page replacement algorithms
  * @file lru_replacement.cpp
- * @author ??? (TODO: your name)
+ * @author Kenny Liu & Jesus Mendoza
  * @brief A class implementing the LRU page replacement algorithms
  * @version 0.1
  */
@@ -10,19 +10,15 @@
 
 #include "lru_replacement.h"
 
-// TODO: Add your implementation here
 LRUReplacement::LRUReplacement(int num_pages, int num_frames)
 : Replacement(num_pages, num_frames), l(), u()
 {
-  // TODO: Complete this constructor
   // list l initialized on line 27
   // unordered_map u initalized on line 28
 }
 
-// TODO: Add your implementations for desctructor, touch_page, load_page, replace_page here
 LRUReplacement::~LRUReplacement()
 {
-  // TODO: Add necessary code here
   /*while(!q.empty())
     {
       q.pop_back();
@@ -32,7 +28,6 @@ LRUReplacement::~LRUReplacement()
 // Accesss a page alreay in physical memory
 void LRUReplacement::touch_page(int page_num)
 {
-  // TODO: Update your data structure LRU replacement
   l.erase(u[page_num]); // remove the map 
   l.push_front(page_num);
   u[page_num] = l.begin(); // assign the position of the page into the map
@@ -41,7 +36,6 @@ void LRUReplacement::touch_page(int page_num)
 
 // Access an invalid page, but free frames are available
 void LRUReplacement::load_page(int page_num) {
-  // TODO: Update your data structure LRU replacement and 
   page_faults++; // invalid page, so it is a page fault
   l.push_front(page_num); // push it to the front of the list
   u[page_num] = l.begin(); // save the index of the page in the list to the map
@@ -51,7 +45,6 @@ void LRUReplacement::load_page(int page_num) {
 
 // Access an invalid page and no free frames are available
 int LRUReplacement::replace_page(int page_num) {
-    // TODO: Update your data structure LRU replacement and pagetable
   page_faults++; // invalid page, so it is a page fault
   page_replacement++; // page replaced, so increment page replacement
 
