@@ -1,4 +1,3 @@
-// Remember to add comments to your code
 
 #include <iostream>
 #include <fstream>
@@ -99,7 +98,6 @@ int main(int argc, char *argv[]) {
     std::cout << "\n================================Test 2==================================================\n";
 
     std::cout << "****************Simulate FIFO replacement****************************" << std::endl;
-    // TODO: Add your code to calculate number of page faults using FIFO replacement algorithm
   // Test 2: Read and simulate the large list of logical addresses from the input file "large_refs.txt"
     std::ifstream large; //set a name of the file variable
     large.open("large_refs.txt");
@@ -129,7 +127,6 @@ int main(int argc, char *argv[]) {
       }
     end = clock();
     elapsedTime = double(end - start) / double(CLOCKS_PER_SEC);
-    // TODO: print the statistics and run-time
     FIFO.print_statistics();
     std::cout << "Elapsed time = " << elapsedTime << " seconds" << std::endl;
     /*auto t2 = std::chrono::high_resolution_clock::now();
@@ -150,7 +147,6 @@ int main(int argc, char *argv[]) {
       }
     end2 = clock();  
     elapsedTime2 = double(end2 - start2) / double(CLOCKS_PER_SEC);
-    // TODO: print the statistics and run-time
     LIFO.print_statistics();
     std::cout << "Elapsed time = " << elapsedTime2 << " seconds" << std::endl;
     //auto t4 = std::chrono::high_resolution_clock::now();
@@ -158,7 +154,6 @@ int main(int argc, char *argv[]) {
     //std::cout << "Elapsed time = " << elapsedTime2.count() << " seconds" << std::endl;
 
     std::cout << "****************Simulate LRU replacement****************************" << std::endl;
-    // TODO: Add your code to calculate number of page faults using LRU replacement algorithm
     start3 = clock();
     //auto t5 = std::chrono::high_resolution_clock::now(); 
     LRUReplacement LRU(num_pages, num_frames);
@@ -170,7 +165,6 @@ int main(int argc, char *argv[]) {
       }
     end3 = clock();
     elapsedTime3 = double(end3 - start3) / double(CLOCKS_PER_SEC);
-    // TODO: print the statistics and run-time
     LRU.print_statistics();
     std::cout << "Elapsed time = " << elapsedTime3 << " seconds" << std::endl;
     //auto t6 = std::chrono::high_resolution_clock::now();
