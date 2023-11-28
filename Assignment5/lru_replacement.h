@@ -1,7 +1,7 @@
 /**
 * Assignment 5: Page replacement algorithms
  * @file lru_replacement.h
- * @author ??? (TODO: your name)
+ * @author Kenny Liu & Jesus Mendoza
  * @brief A class implementing the LRU page replacement algorithms
  * @version 0.1
  */
@@ -10,7 +10,6 @@
 
 #pragma once
 
-// Remember to add comments to your code
 
 #include "replacement.h"
 //#include <vector>
@@ -21,7 +20,6 @@
  */
 class LRUReplacement : public Replacement
 {
-	// TODO: Add your implementation to this class
   
   //vector<int> q;
   list<int> l;
