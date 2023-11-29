@@ -1,7 +1,7 @@
 /**
 * Assignment 5: Page replacement algorithms
  * @file replacement.h
- * @author Kyrstn Hall and EJ Lilagan
+ * @author Kenny Liu & Jesus Mendoza
  * @brief A base class for different page replacement algorithms.
  * @version 0.1
  */
@@ -22,7 +22,6 @@ protected:      // subclasses can access these members
     // Member variable for the page table
     PageTable page_table;
 
-	  // TODO: Add additional member variables to this class
 	  int references; // number of references
     int page_faults; // number of page faults
     int page_replacement; // number of page_replacements
@@ -44,7 +43,6 @@ public:
      */
     virtual ~Replacement();
 
-	// TODO: Add additional member variables and functions if needed
 
     /**
 	 * @brief Simulate a single page access.
